@@ -1,7 +1,7 @@
 var minHeight = 250;
 var minWidth = 250;
 
-var ajaxDomain = 'http://zfort-internship.com';
+var ajaxDomain = 'https://zfort-internship.herokuapp.com/';
 var ajaxUrl = ajaxDomain + '/index.php';
 var ajaxUrlJSONP = ajaxDomain + '/index-jsonp.php';
 
@@ -41,25 +41,6 @@ for(var i=0, l = imgs.length; i<l; i++){
 
         //image.style.position = 'relative';
     }
-}
-
-function sendAjaxJSONPYQLRequest(query){
-    $.ajax({
-        url: "http://query.yahooapis.com/v1/public/yql",
-        // The name of the callback parameter, as specified by the YQL service
-        jsonp: "callback",
-        // Tell jQuery we're expecting JSONP
-        dataType: "jsonp",
-        // Tell YQL what we want and that we want JSON
-        data: {
-            q: query,
-            format: "json"
-        },
-        // Work with the response
-        success: function( response ) {
-            console.log( response ); // server response
-        }
-    });
 }
 
 function sendAjaxJSONPRequest(url) {
